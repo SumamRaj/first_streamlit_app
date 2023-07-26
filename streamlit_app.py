@@ -18,6 +18,7 @@ Fruit_To_Show = my_fruit_list.loc[Fruit_Selected]
 # Display the table on the page.
 streamlit.dataframe(my_fruit_list)
 streamlit.header('Fruityvice Fruit Advice!')
+fruit_choice=streamlit.text_input('What fruit would you like information about?','Kiwi')
 streamlit.write('The user entered', fruit_choice)
 import requests
 fruityvice_response=requests.get ("https://fruityvice.com/api/fruit/" + fruit_choice)
