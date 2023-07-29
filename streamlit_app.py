@@ -25,10 +25,10 @@ Fruit_To_Show = my_fruit_list.loc[Fruit_Selected]
 #fruit_choice=streamlit.text_input('What fruit would you like information about?','Kiwi')
 #streamlit.write('The user entered', fruit_choice)
 
-fruityvice_response=requests.get ("https://fruityvice.com/api/fruit/" + fruit_choice)
-streamlit.text(fruityvice_response)
-fruityvice_normalized=pandas.pandas.json_normalize(fruityvice_response.json())
-streamlit.dataframe(fruityvice_normalized)
+#fruityvice_response=requests.get ("https://fruityvice.com/api/fruit/" + fruit_choice)
+#streamlit.text(fruityvice_response)
+#fruityvice_normalized=pandas.pandas.json_normalize(fruityvice_response.json())
+#streamlit.dataframe(fruityvice_normalized)
 
 streamlit.stop()
 
@@ -39,9 +39,9 @@ my_data_rows = my_cur.fetchall()
 streamlit.header("The Fruit load list contains:")
 streamlit.dataframe(my_data_rows)
 
-fruit_choice=streamlit.text_input('What fruit would you like add?','jackfruit')
-streamlit.write('Thanks for adding', fruit_choice)
-my_cur.execute("insert into fruit_load_list values ('from streamlit')");
+#fruit_choice=streamlit.text_input('What fruit would you like add?','jackfruit')
+#streamlit.write('Thanks for adding', fruit_choice)
+#my_cur.execute("insert into fruit_load_list values ('from streamlit')");
 
 streamlit.header('Fruityvice Fruit Advice!')
 try:
