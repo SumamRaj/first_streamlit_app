@@ -43,6 +43,20 @@ fruit_choice=streamlit.text_input('What fruit would you like add?','jackfruit')
 streamlit.write('Thanks for adding', fruit_choice)
 my_cur.execute("insert into fruit_load_list values ('from streamlit')");
 
+streamlit.header('Fruityvice Fruit Advice!')
+try:
+  fruit_choice=streamlit.text_input('What fruit would you like information about?')
+  if not fruit_choice:
+    streamlit.error("please slelect a fruit to get information.")
+  else:
+    fruityvice_response=requests.get ("https://fruityvice.com/api/fruit/" + this_fruit_choice)
+    fruityvice_normalized=pandas.json_normalize(fruityvice_response.json())
+    sreamlit.dataframes(fruityvice_normalized)
+except URLError as e:
+  streamlit.error()
+    
+    
+
 
 
   
